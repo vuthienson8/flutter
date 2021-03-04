@@ -1,4 +1,5 @@
-import 'package:application/drawer/widgets/settings_view.dart';
+
+import 'package:application/page/drawer/widgets/settings_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

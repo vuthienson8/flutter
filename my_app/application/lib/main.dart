@@ -1,4 +1,6 @@
-import 'package:application/home/home_view.dart';
+
+// import 'package:application/page/home/home_view.dart';
+import 'package:application/page/login/login_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeView(),
+      home: LoginView(),
     );
   }
 }
