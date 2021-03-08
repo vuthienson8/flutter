@@ -1,3 +1,4 @@
+import 'package:application/page/login/widgets/email_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +18,11 @@ class _LoginViewState extends State<LoginView> {
               child: Container(color: Colors.blue),
             ),
             Positioned.fill(
-              top: MediaQuery.of(context).size.height / 3,
+              top: MediaQuery.of(context).size.height / 2,
               child: Container(color: Colors.white),
             ),
             ListView(
+              padding: EdgeInsets.only(top: 0),
               children: [
                 Container(
                   padding: const EdgeInsets.all(16.0),
@@ -38,37 +40,14 @@ class _LoginViewState extends State<LoginView> {
                               padding: EdgeInsets.all(32),
                               child: Column(
                                 children: [
-                                  TextFormField(
-                                    key: Key('email'),
-                                    decoration: InputDecoration(
-                                        labelText: 'Email',
-                                        icon: Icon(Icons.email_outlined)),
-                                  ),
-                                  TextFormField(
-                                    key: Key('password'),
-                                    decoration: InputDecoration(
-                                      labelText: 'Password',
-                                      icon: Icon(Icons.security),
-                                    ),
-                                    obscureText: true,
-                                  ),
-                                  SizedBox(height: 20),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      RaisedButton(
-                                        onPressed: () {},
-                                        child: Text('Login'),
-                                        color: Colors.blue,
-                                      ),
-                                      TextButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          'Forgot Password?',
-                                        ),
-                                      )
-                                    ],
+                                  EmailCard(
+                                    onLoginPressed: (email, password) {
+                                      //TODO xu ly dang nhap o day
+                                      print('$email, $password');
+                                    },
+                                    onResetPressed: (resetEmail, resetPassword){
+                                      print('$resetEmail, $resetPassword');
+                                    },
                                   ),
                                 ],
                               ),
