@@ -45,8 +45,8 @@ class _LoginViewState extends State<LoginView> {
                                       //TODO xu ly dang nhap o day
                                       print('$email, $password');
                                     },
-                                    onResetPressed: (resetEmail, resetPassword){
-                                      print('$resetEmail, $resetPassword');
+                                    onResetPressed: (email){
+                                      print('$email');
                                     },
                                   ),
                                 ],

@@ -5,7 +5,7 @@ enum EmaiCardStatus { login, reset }
 
 class EmailCard extends StatefulWidget {
   final void Function(String email, String password) onLoginPressed;
-  final void Function(String resetEmail, String resetPassword) onResetPressed;
+  final void Function(String email) onResetPressed;
   const EmailCard({Key key, this.onLoginPressed, this.onResetPressed})
       : super(key: key);
 
@@ -31,7 +31,7 @@ class _EmailCardState extends State<EmailCard> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        //trang thai dang nhap
+        //Login view
         Visibility(
           visible: _status == EmaiCardStatus.login,
           child: Column(
@@ -91,7 +91,7 @@ class _EmailCardState extends State<EmailCard> {
             ],
           ),
         ),
-        //trang thai khoi phuc mat khau
+        //Password restore
         Visibility(
           visible: _status == EmaiCardStatus.reset,
           child: Column(
@@ -122,8 +122,7 @@ class _EmailCardState extends State<EmailCard> {
                     onPressed: () {
                       if (_resetEmailKey.currentState.validate()) {
                         final _resetEmail = _resetEmailKey.currentState.value;
-                        final _resetPassword = _resetEmailKey.currentState.value;
-                        widget.onResetPressed(_resetEmail, _resetPassword);
+                        widget.onResetPressed(_resetEmail);
                       }
                     },
                     child: Text('Khôi phục'),
