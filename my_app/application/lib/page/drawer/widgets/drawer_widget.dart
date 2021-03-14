@@ -1,5 +1,5 @@
-
-import 'package:application/page/drawer/widgets/settings_view.dart';
+import './settings_view.dart';
+import '../../main/photo/photo_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +30,20 @@ class DrawerWidget extends StatelessWidget {
               );
             },
           ),
+          ListTile(
+            leading: Icon(Icons.photo),
+            title: Text('Photo Browser'),
+            trailing: Icon(Icons.keyboard_arrow_right),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => Photoview(),
+              )
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+class MeterialPageRoute {}

@@ -127,9 +127,11 @@ class _EmailCardState extends State<EmailCard> {
                     },
                     child: Text('Khôi phục'),
                   ),
-                  RaisedButton(
+                  TextButton(
                     onPressed: () => status = EmaiCardStatus.login,
-                    child: Text('Bỏ qua'),
+                    child: Text(
+                      'Bỏ qua',
+                    ),
                   )
                 ],
               ),
